@@ -88,14 +88,6 @@ Short link redirects to original URL
 
 Click count increases on each redirect
 
-🧪 Example Short URL
-
-https://yourdomain.com/abc123
-
-🤝 Contributing
-
-Pull requests are welcome.
-For major changes, open an issue to discuss what you’d like to modify.
 
 📜 License
 
