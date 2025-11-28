@@ -1,4 +1,4 @@
-# Shortly--URL-Shortner
+# SHORTLY: URL-Shortner
 (Scalable Full Stack Production Grade System-MERN Stack)
 
 A fast and lightweight URL Shortener application built using the MERN stack, allowing users to convert long URLs into short, shareable links with click-tracking and link management features.
