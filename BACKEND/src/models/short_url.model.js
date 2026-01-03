@@ -1,28 +1,69 @@
 import mongoose from "mongoose";
 
-const shortUrlSchema = new mongoose.Schema({
+// ---------------- Analytics Schema ----------------
+const AnalyticsSchema = new mongoose.Schema({
+  ip: { type: String },
+  referrer: { type: String, default: null },
 
-  full_url: {
-    type: String,
-    required: true,
+  device: {
+    ua: { type: String }, // raw UA
+    browser: {
+      name: String,
+      version: String,
+    },
+    os: {
+      name: String,
+      version: String,
+    },
+    device: {
+      vendor: String,
+      model: String,
+      type: String, // mobile/desktop/tablet
+    },
+    screen: {
+      width: Number,
+      height: Number,
+    },
   },
-  short_url: {
-    type: String,
-    required: true,
-    unique: true,
-    index: true,
+
+  location: {
+    country: String,
+    region: String,
+    city: String,
+    ll: [Number], // [lat, lon]
   },
-  clicks: {
-    type: Number,
-    required: true,
-    default: 0,
-  },
-  user:{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "User",
-  }
+
+  createdAt: { type: Date, default: Date.now },
 });
 
-const shortUrl = mongoose.model("shortUrl", shortUrlSchema);
+// ---------------- Short URL Schema ----------------
+const ShortUrlSchema = new mongoose.Schema(
+  {
+    full_url: {
+      type: String,
+      required: true,
+    },
 
-export default shortUrl;
+    short_url: {
+      type: String,
+      required: true,
+      unique: true,
+      index: true,
+    },
+
+    user: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+    },
+
+    clicks: {
+      type: Number,
+      default: 0,
+    },
+
+    analytics: [AnalyticsSchema], // merged analytics list
+  },
+  { timestamps: true }
+);
+
+export default mongoose.model("ShortUrl", ShortUrlSchema);
