@@ -1,42 +1,39 @@
 # SHORTLY: URL-Shortner
-(Scalable Full Stack Production Grade System-MERN Stack)
+## (Scalable Full Stack Production Grade System-MERN Stack)
 
 A fast and lightweight URL Shortener application built using the MERN stack, allowing users to convert long URLs into short, shareable links with click-tracking and link management features.
 
-🚀 Features
+--- 
 
-🔗 Shorten long URLs into unique short codes
+###🚀 Features
 
-🚦 Redirect short links to original URLs
+- 🔗 Shorten long URLs into unique short codes
 
-📊 Track total click counts
+- 🚦 Redirect short links to original URLs
 
-🗂 Manage links (view, delete, copy)
+- 📊 Track total click counts
 
-🛡 Server-side validations & error handling
+- 🗂 Manage links (view, delete, copy)
 
-📦 MongoDB for storing URLs
+- 🛡 Server-side validations & error handling
 
-🎨 Clean & responsive UI
+- 📦 MongoDB for storing URLs
 
-🛠 Tech Stack
+- 🎨 Clean & responsive UI
 
-Frontend: React.js
-Backend: Node.js, Express.js
-Database: MongoDB
-Other: Mongoose, Axios, CORS, dotenv
+---
 
-📂 Folder Structure
-root/
-│── client/        # React frontend
-│── server/        # Node/Express backend
-│── models/        # MongoDB schema
-│── routes/        # API routes
-│── controllers/   # Business logic
-│── package.json
-│── README.md
+### 🛠 Tech Stack
 
-⚙️ Installation & Setup
+- Frontend: React.js
+- Backend: Node.js, Express.js
+- Database: MongoDB
+- Other: Mongoose, Axios, CORS, dotenv
+
+---
+
+### ⚙️ Installation & Setup
+
 1️⃣ Clone the repository
 git clone https://github.com/kalpana-chavhan/url-shortener.git
 cd url-shortener
@@ -76,19 +73,26 @@ GET /:shortCode
 
 Redirects to the original URL.
 
-🎬 How It Works
+---
 
-User enters long URL
+### 🎬 How It Works
 
-Backend generates unique short code
+1. User enters long URL
+2. Backend generates unique short code
+3. URL + code stored in MongoDB
+4. Short link redirects to original URL
+5. Click count increases on each redirect
 
-URL + code stored in MongoDB
+---
 
-Short link redirects to original URL
+### 🔧 Project Status
 
-Click count increases on each redirect
+This project is currently a work in progress.
+Some features may be incomplete, and the application may contain bugs or unstable behavior.
+The codebase is under active development, and changes may be made frequently as improvements, fixes, and enhancements are implemented.
 
+---
 
-📜 License
+### 📜 License
 
 This project is licensed under the MIT License.
